@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="first_fragment_topbar_height">106dp</dimen>
+</resources>
