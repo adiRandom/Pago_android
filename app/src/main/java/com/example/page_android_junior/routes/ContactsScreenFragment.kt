@@ -10,7 +10,7 @@ import com.example.page_android_junior.R
 import com.example.page_android_junior.databinding.ContactScreeenFragmentBinding
 
 // This fragment holds the UI and VM for the contact screen
-class ContactScreenFragment : Fragment() {
+class ContactsScreenFragment : Fragment() {
 
     private var _binding: ContactScreeenFragmentBinding? = null
 
