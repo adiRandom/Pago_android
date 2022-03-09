@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.page_android_junior.FirstFragment"
-        tools:layout="@layout/fragment_first">
+        android:name="com.example.page_android_junior.routes.FirstFragment"
+        tools:layout="@layout/contact_screeen_fragment">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"

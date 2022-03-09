@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    tools:context=".routes.ContactScreenFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topbar"
@@ -20,9 +20,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:fontFamily="@font/sf_pro_display_bold"
-            android:text="@string/first_fragment_heading"
+            android:text="@string/contact_screen_fragment_heading"
             android:textColor="@color/text_primary"
-            android:textSize="@dimen/first_fragment_heading_size"
+            android:textSize="@dimen/contact_screen_fragment_heading_size"
             app:layout_constraintLeft_toLeftOf="@id/topbar"
             app:layout_constraintTop_toTopOf="@id/topbar"
             app:lineHeight="30dp" />
@@ -43,9 +43,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_pro_text_semibold"
-            android:text="@string/first_fragment_topbar_separator_label"
+            android:text="@string/contact_screen_fragment_topbar_separator_label"
             android:textColor="#98A5BE"
-            android:textSize="@dimen/first_fragment_topbar_separator_label_size"
+            android:textSize="@dimen/contact_screen_fragment_topbar_separator_label_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

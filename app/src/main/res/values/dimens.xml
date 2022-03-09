@@ -1,9 +1,9 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="first_fragment_topbar_height">106dp</dimen>
+    <dimen name="contact_screen_fragment_topbar_height">106dp</dimen>
     <dimen name="horizontal_padding">24dp</dimen>
-    <dimen name="first_fragment_heading_size">24sp</dimen>
-    <dimen name="first_fragment_topbar_separator_label_size">13sp</dimen>
+    <dimen name="contact_screen_fragment_heading_size">24sp</dimen>
+    <dimen name="contact_screen_fragment_topbar_separator_label_size">13sp</dimen>
     <dimen name="contact_view_holder_avatar_size">46dp</dimen>
     <dimen name="contact_view_holder_height">94dp</dimen>
 </resources>
