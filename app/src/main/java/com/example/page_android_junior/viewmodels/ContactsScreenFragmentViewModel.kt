@@ -1,5 +1,6 @@
 package com.example.page_android_junior.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
@@ -17,7 +18,9 @@ class ContactsScreenFragmentViewModel : ViewModel() {
         withContext(Dispatchers.IO) {
             val res = ApiInstance.UserApi.getUserInfoList().execute()
             val body = res.body();
-            if(body != null) {
+            Log.d("Body",res.code().toString())
+//            TODO: Handle errors
+            if (body != null) {
                 emit(body)
             }
         }

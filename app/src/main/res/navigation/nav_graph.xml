@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/ContactScreen">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.page_android_junior.routes.FirstFragment"
+        android:id="@+id/ContactScreen"
+        android:name="com.example.page_android_junior.routes.ContactsScreenFragment"
         tools:layout="@layout/contact_screeen_fragment">
 
         <action
@@ -21,6 +21,6 @@
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/ContactScreen" />
     </fragment>
 </navigation>

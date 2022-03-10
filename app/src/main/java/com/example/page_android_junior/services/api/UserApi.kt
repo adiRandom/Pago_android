@@ -8,10 +8,10 @@ import retrofit2.http.Path
 
 interface UserApi {
 
-    @GET("/users")
+    @GET("users")
     fun getUserInfoList(): Call<List<User>>;
 
-    @GET("/users/{userId}/posts")
+    @GET("users/{userId}/posts")
     fun getPostsForUserWithId(@Path("userId") userId: Int): Call<List<ApiPost>>
 }
 
