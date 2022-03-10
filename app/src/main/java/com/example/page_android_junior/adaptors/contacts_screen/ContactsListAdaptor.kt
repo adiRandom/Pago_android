@@ -7,7 +7,7 @@ import com.example.page_android_junior.databinding.ContactViewHolderBinding
 import com.example.page_android_junior.models.api.User
 import com.example.page_android_junior.view_holders.contacts_screen.ContactViewHolder
 
-class ContactsListAdaptor(private val contacts: List<User>) :
+class ContactsListAdaptor(private var contacts: List<User>) :
     RecyclerView.Adapter<ContactViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -21,6 +21,11 @@ class ContactsListAdaptor(private val contacts: List<User>) :
 
     override fun getItemCount(): Int {
         return contacts.size;
+    }
+
+    fun updateData(data:List<User>){
+        contacts = data;
+        notifyDataSetChanged()
     }
 
 }
