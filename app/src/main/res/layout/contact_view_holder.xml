@@ -6,11 +6,11 @@
 
     <data>
 
-        <import type="com.example.page_android_junior.models.User" />
+        <import type="com.example.page_android_junior.models.api.User" />
 
         <variable
             name="user"
-            type="com.example.page_android_junior.models.User" />
+            type="com.example.page_android_junior.models.api.User" />
 
     </data>
 
