@@ -37,7 +37,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/contact_view_holder_avatar_alt"
-                app:srcCompat="@drawable/ic_launcher_background" />
+                app:srcCompat="@drawable/ic_launcher_background"
+                imageForUser="@{user}"
+                />
         </androidx.cardview.widget.CardView>
 
         <TextView
