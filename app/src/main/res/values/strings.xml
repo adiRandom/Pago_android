@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Page_Android_Junior</string>
+    <string name="app_name">Pago_android_junior</string>
 
 <!--    First fragment-->
     <string name="contact_screen_fragment_topbar_title">Contacte</string>

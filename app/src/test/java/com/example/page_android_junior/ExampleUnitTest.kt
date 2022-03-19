@@ -1,4 +1,4 @@
-package com.example.page_android_junior
+package com.example.pago_android_junior
 
 import org.junit.Test
 

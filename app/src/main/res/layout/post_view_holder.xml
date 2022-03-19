@@ -5,11 +5,11 @@
 
     <data>
 
-        <import type="com.example.page_android_junior.models.Post" />
+        <import type="com.example.pago_android_junior.models.Post" />
 
         <variable
             name="post"
-            type="com.example.page_android_junior.models.Post" />
+            type="com.example.pago_android_junior.models.Post" />
 
     </data>
 

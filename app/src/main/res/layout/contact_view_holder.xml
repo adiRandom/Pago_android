@@ -7,12 +7,12 @@
 
     <data>
 
-        <import type="com.example.page_android_junior.models.User" />
+        <import type="com.example.pago_android_junior.models.User" />
 
 
         <variable
             name="user"
-            type="com.example.page_android_junior.models.User" />
+            type="com.example.pago_android_junior.models.User" />
 
     </data>
 

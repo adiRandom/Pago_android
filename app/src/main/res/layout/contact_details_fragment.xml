@@ -6,7 +6,7 @@
 
     <data>
 
-        <import type="com.example.page_android_junior.models.User" />
+        <import type="com.example.pago_android_junior.models.User" />
 
         <import type="android.view.View" />
 
@@ -14,7 +14,7 @@
 
         <variable
             name="user"
-            type="com.example.page_android_junior.models.User" />
+            type="com.example.pago_android_junior.models.User" />
 
         <variable
             name="postCount"

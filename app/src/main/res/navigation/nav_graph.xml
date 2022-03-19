@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/ContactScreen"
-        android:name="com.example.page_android_junior.routes.ContactsScreenFragment"
+        android:name="com.example.pago_android_junior.routes.ContactsScreenFragment"
         tools:layout="@layout/contact_screeen_fragment">
 
         <action
@@ -17,11 +17,11 @@
     </fragment>
     <fragment
         android:id="@+id/ContactDetails"
-        android:name="com.example.page_android_junior.routes.ContactDetailsFragment"
+        android:name="com.example.pago_android_junior.routes.ContactDetailsFragment"
         tools:layout="@layout/contact_details_fragment">
         <argument
             android:name="user"
-            app:argType="com.example.page_android_junior.models.User" />
+            app:argType="com.example.pago_android_junior.models.User" />
         <action
             android:id="@+id/goBack"
             app:popUpTo="@id/ContactScreen" />
