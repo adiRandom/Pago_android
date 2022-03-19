@@ -1,10 +1,8 @@
 package com.example.page_android_junior.utils.image
 
-import android.R.attr
-import android.content.Context
 import android.graphics.*
 import android.graphics.Color.parseColor
-import com.example.page_android_junior.models.api.User
+import com.example.page_android_junior.models.api.UserApi
 
 
 const val AVATAR_TEXT_SIZE = 17f
@@ -13,7 +11,7 @@ val AVATAR_BACKGROUND_COLOR = parseColor("#C1C8D7");
 const val AVATAR_SIZE = 46
 
 // TODO: Cache the avatars
-fun generateAvatarForUser(user: User, typeface: Typeface?): Bitmap {
+fun generateAvatarForUser(user: UserApi, typeface: Typeface?): Bitmap {
 
     // Get a paint object to draw on the canvas with
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {

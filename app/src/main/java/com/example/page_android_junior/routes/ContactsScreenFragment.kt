@@ -23,8 +23,12 @@ class ContactsScreenFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Bind the contact list from the VM to the contact list RecyclerView
+        // New users loaded, init their avatars then
+        // bind the contact list from the VM to the contact list RecyclerView
         viewModel.contacts.observe(this) {
+            it.forEach { user ->
+                user.initAvatar(context);
+            }
             contactsListAdapter.updateData(it)
         }
     }

@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.page_android_junior.ContactDetailsFragment"
+        android:name="com.example.page_android_junior.routes.ContactDetailsFragment"
         tools:layout="@layout/contact_details_fragment">
 
         <action

@@ -4,11 +4,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import androidx.lifecycle.viewModelScope
-import com.example.page_android_junior.models.api.User
+import com.example.page_android_junior.models.User
+import com.example.page_android_junior.models.api.UserApi
 import com.example.page_android_junior.services.api.ApiInstance
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Exception
 
@@ -22,12 +21,14 @@ class ContactsScreenFragmentViewModel : ViewModel() {
                 val body = res.body();
 //            TODO: Handle errors
                 if (body != null) {
-                    emit(body)
+                    emit(body.map { User(it) })
                 }
             } catch (e: Exception) {
                 Log.e("Errror", e.toString())
             }
         }
     }
+
+
 
 }

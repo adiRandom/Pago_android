@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.page_android_junior.databinding.ContactViewHolderBinding
-import com.example.page_android_junior.models.api.User
+import com.example.page_android_junior.models.User
 import com.example.page_android_junior.view_holders.contacts_screen.ContactViewHolder
 
 class ContactsListAdaptor(private var contacts: List<User>) :

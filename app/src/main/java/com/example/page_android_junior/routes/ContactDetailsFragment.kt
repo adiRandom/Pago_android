@@ -1,4 +1,4 @@
-package com.example.page_android_junior
+package com.example.page_android_junior.routes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
