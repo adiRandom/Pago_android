@@ -7,4 +7,5 @@
     <string name="contact_screen_fragment_topbar_separator_label">CONTACTELE MELE</string>
     <string name="contact_view_holder_avatar_alt">Contact avatar</string>
     <string name="contact_view_holder_enter_arrow_alt">Open contact</string>
+    <string name="contact_details_title">Detalii contanct</string>
 </resources>
