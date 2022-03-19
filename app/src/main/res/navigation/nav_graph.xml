@@ -11,16 +11,20 @@
         tools:layout="@layout/contact_screeen_fragment">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_ContactScreen_to_ContactDetails"
+            app:destination="@id/ContactDetails"
+            app:popUpTo="@id/ContactScreen" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/ContactDetails"
         android:name="com.example.page_android_junior.routes.ContactDetailsFragment"
         tools:layout="@layout/contact_details_fragment">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/ContactScreen" />
+        <argument
+            android:name="user"
+            app:argType="com.example.page_android_junior.models.User" />
     </fragment>
 </navigation>
