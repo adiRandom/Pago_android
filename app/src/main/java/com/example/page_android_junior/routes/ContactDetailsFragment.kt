@@ -26,7 +26,7 @@ class ContactDetailsFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         // Bind the posts list on the VM to the RecyclerView
-        viewModel.posts.observe(this) {
+        viewModel.getPosts().observe(this) {
             postListAdaptor.updateData(it)
         }
 
@@ -50,6 +50,12 @@ class ContactDetailsFragment : Fragment() {
         binding.contactDetailsPostList.also {
             it.adapter = postListAdaptor
             it.layoutManager = postListLayoutManager
+        }
+
+        // Bind the back button to the back navigation
+        binding.backButton.setOnClickListener {
+            val action = ContactDetailsFragmentDirections.goBack()
+            findNavController().navigate(action)
         }
         return binding.root
 

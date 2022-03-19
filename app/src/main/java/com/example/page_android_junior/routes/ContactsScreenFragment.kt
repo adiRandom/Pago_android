@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.page_android_junior.R
@@ -25,12 +26,15 @@ class ContactsScreenFragment : Fragment() {
 
         // New users loaded, init their avatars then
         // bind the contact list from the VM to the contact list RecyclerView
-        viewModel.contacts.observe(this) {
+        viewModel.getContacts().observe(this) {
             it.forEach { user ->
                 user.initAvatar(context);
             }
             contactsListAdapter.updateData(it)
         }
+
+        // Load the contacts when the fragment gets created
+        viewModel.loadContacts(context)
     }
 
     override fun onCreateView(

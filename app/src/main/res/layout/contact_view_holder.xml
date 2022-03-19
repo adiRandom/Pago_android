@@ -15,6 +15,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contact_view_holder_root"
         android:layout_width="match_parent"
         android:layout_height="@dimen/contact_view_holder_height"
         android:paddingHorizontal="@dimen/horizontal_padding">

@@ -9,15 +9,17 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ContactDetailsViewModel : ViewModel() {
-    val posts: LiveData<List<Post>> by lazy {
+    private val posts: MutableLiveData<List<Post>> by lazy {
         MutableLiveData<List<Post>>(emptyList())
     }
+
+    fun getPosts(): LiveData<List<Post>> = posts;
 
     fun loadPostsForUser(userId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             val postsRes = ApiInstance.UserApi.getPostsForUserWithId(userId).execute().body();
             if (postsRes != null) {
-                (posts as MutableLiveData).postValue(postsRes.map { Post(it) })
+                posts.postValue(postsRes.map { Post(it) })
             }
         }
     }
