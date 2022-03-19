@@ -1,15 +1,10 @@
 package com.example.page_android_junior
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import com.example.page_android_junior.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,8 +14,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Init flipper
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
     }
 
