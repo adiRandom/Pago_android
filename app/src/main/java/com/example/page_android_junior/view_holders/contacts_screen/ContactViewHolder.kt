@@ -14,7 +14,6 @@ class ContactViewHolder(val viewBinding: ContactViewHolderBinding) :
         this.viewBinding.user = item
 
         // Bind the on click handler to navigate to the contact screen
-//        TODO: Add the select animation
         this.viewBinding.contactViewHolderRoot.setOnClickListener {
             val action = ContactsScreenFragmentDirections.openContactDetails(item)
             it.findNavController().navigate(action)

@@ -120,7 +120,6 @@
                 app:layout_constraintVertical_bias="0.39" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!--        TODO: Add an empty state-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/contact_details_post_list"
             android:layout_width="match_parent"

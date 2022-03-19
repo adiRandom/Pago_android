@@ -13,6 +13,7 @@
         android:paddingHorizontal="@dimen/horizontal_padding"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/topbarHeading"
             android:layout_width="wrap_content"
@@ -50,7 +51,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:lineHeight="18dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <!--TODO: Add loader-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contacts_list"
         android:layout_width="match_parent"
