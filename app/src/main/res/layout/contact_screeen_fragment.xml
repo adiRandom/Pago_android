@@ -13,7 +13,6 @@
         android:paddingHorizontal="@dimen/horizontal_padding"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <!--            TODO: Extract color in theme-->
         <TextView
             android:id="@+id/topbarHeading"
             android:layout_width="wrap_content"
@@ -56,6 +55,7 @@
         android:id="@+id/contacts_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topbar_separator" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topbar_separator" />
 </androidx.constraintlayout.widget.ConstraintLayout>

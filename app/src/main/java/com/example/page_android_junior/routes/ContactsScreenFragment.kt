@@ -19,6 +19,7 @@ class ContactsScreenFragment : Fragment() {
 
     private lateinit var binding: ContactScreeenFragmentBinding;
     private lateinit var contactsListAdapter: ContactsListAdaptor
+    // TODO: Check the preservation of the contacts when going back with the top back button
     private val viewModel: ContactsScreenFragmentViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

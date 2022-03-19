@@ -19,6 +19,7 @@ class ContactsScreenFragmentViewModel : ViewModel() {
     fun getContacts(): LiveData<List<User>> = contacts;
 
 
+    //TODO: Investigate load time
     fun loadContacts(context: Context?) {
         viewModelScope.launch(Dispatchers.IO) {
             try {

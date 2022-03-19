@@ -59,6 +59,7 @@ class User(
                 return;
             }
             // Generate a image with the initials of the user
+//            TODO: Fix image pos
             avatar = generateAvatarForUser(
                 this,
                 // Get the font using the context of this view
