@@ -29,7 +29,11 @@
             android:layout_height="@dimen/contact_view_holder_avatar_size"
             android:id="@+id/contact_view_holder_avatar"
             layout="@layout/contact_avatar"
-            bind:user="@{user}" />
+            bind:user="@{user}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <TextView
             android:id="@+id/textView"

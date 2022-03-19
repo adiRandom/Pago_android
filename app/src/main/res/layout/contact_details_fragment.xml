@@ -67,6 +67,9 @@
                 layout="@layout/contact_avatar"
                 android:layout_width="@dimen/contact_view_holder_avatar_size"
                 android:layout_height="@dimen/contact_view_holder_avatar_size"
+                app:layout_constraintEnd_toEndOf="@id/contact_details_user_details_layout"
+                app:layout_constraintStart_toStartOf="@id/contact_details_user_details_layout"
+                app:layout_constraintTop_toTopOf="@id/contact_details_user_details_layout"
                 bind:user="@{user}" />
 
             <TextView
@@ -94,6 +97,27 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/contact_details_user_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contat_details_post_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contact_details_user_details_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf_pro_text_semibold"
+                android:text="@string/empty_post_list"
+                android:textColor="@color/secondary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.39" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!--        TODO: Add an empty state-->
