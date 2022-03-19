@@ -42,7 +42,6 @@ class ContactsScreenFragment : Fragment() {
 
         // Init the RecyclerList for the contacts
         val contactListLayoutManager = LinearLayoutManager(activity)
-        //TODO: Add the actual data
         contactsListAdapter = ContactsListAdaptor(emptyList())
         binding.contactsList.also {
             it.adapter = contactsListAdapter
