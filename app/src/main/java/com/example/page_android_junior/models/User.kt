@@ -22,8 +22,8 @@ class User(
     name: String,
     email: String,
     gender: String,
-    status: String,
-) : UserApi(id, name, email, gender, status), Parcelable {
+    _status: String,
+) : UserApi(id, name, email, gender, _status), Parcelable {
     var avatar: Bitmap? = null
 
     // Get a string with the initials of the user to use for the avatar if the id is odd
@@ -51,7 +51,7 @@ class User(
         userApi.name,
         userApi.email,
         userApi.gender,
-        userApi.status,
+        userApi.status
     );
 
     constructor(user: User) : this(user.id, user.name, user.email, user.gender, user.status) {

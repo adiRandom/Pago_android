@@ -1,15 +1,14 @@
 package com.example.page_android_junior.viewmodels
 
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.page_android_junior.models.User
-import com.example.page_android_junior.models.api.UserApi
+import com.example.page_android_junior.models.constants.UserStatus
 import com.example.page_android_junior.services.api.ApiInstance
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Exception
+
 
 class ContactsScreenFragmentViewModel : ViewModel() {
     val contacts: LiveData<List<User>> = liveData {
@@ -19,7 +18,8 @@ class ContactsScreenFragmentViewModel : ViewModel() {
                 val res = ApiInstance.UserApi.getUserInfoList().execute()
                 val body = res.body();
                 if (body != null) {
-                    val users = body.map { User(it) };
+                    // Only keep the active users
+                    val users = body.map { User(it) }.filter { it->it.status == UserStatus.ACTIVE }
 
                     // Emit the users without the avatars for a fast initial load
                     emit(users)
