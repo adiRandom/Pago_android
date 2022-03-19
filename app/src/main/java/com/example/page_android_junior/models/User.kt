@@ -54,6 +54,10 @@ class User(
         userApi.status,
     );
 
+    constructor(user: User) : this(user.id, user.name, user.email, user.gender, user.status) {
+        avatar = user.avatar;
+    }
+
 
     /**
      * Method to be called after the User object was created to asynchronously load the avatar
@@ -88,8 +92,12 @@ class User(
 
     override fun equals(other: Any?): Boolean {
         if (other is User) {
-            Log.i("Equals called", (other.name == name && other.email == email && other.avatar == avatar && other.gender == gender && other.status == status).toString())
-            return other.name == name && other.email == email && other.avatar == avatar && other.gender == gender && other.status == status
+            return other.id == id &&
+                    other.name == name &&
+                    other.email == email &&
+                    other.avatar == avatar &&
+                    other.gender == gender &&
+                    other.status == status
         }
         return super<UserApi>.equals(other)
     }

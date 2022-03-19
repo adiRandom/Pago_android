@@ -26,11 +26,15 @@ class ContactsScreenFragmentViewModel : ViewModel() {
 
                     // Now load the avatars of all the users that need
                     // After an avatar gets loaded emit the new value so we don't wait until all of them are loaded to draw the final UI
-                    for (user in users) {
+
+                    // The objects in the users list are referenced already in other parts of the app
+                    // Create a new list to load the avatars into to not mutate those references
+                    val usersWithAvatar = users.map{it->User(it)}
+                    for (user in usersWithAvatar) {
                         user.loadAvatar()
                         if (user.avatar != null) {
                             // An avatar was loaded so emit the new value for liveData
-                            emit(users)
+                            emit(usersWithAvatar)
                         }
                     }
 
