@@ -19,10 +19,14 @@ class ContactDetailsViewModel : ViewModel() {
 
     fun getPosts(): LiveData<List<Post>> = posts;
 
+    /**
+     * Make the API call to load the posts for a given user
+     */
     fun loadPostsForUser(userId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             val postsRes = ApiInstance.UserApi.getPostsForUserWithId(userId).execute().body();
             if (postsRes != null) {
+                // Update the LiveData with the new value
                 posts.postValue(postsRes.map { Post(it) })
             }
         }

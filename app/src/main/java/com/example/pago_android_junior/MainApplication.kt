@@ -11,6 +11,8 @@ import com.facebook.soloader.SoLoader
 class MainApplication:Application() {
     override fun onCreate() {
         super.onCreate()
+
+        // Init flipper inspector
         SoLoader.init(this, false)
         if (BuildConfig.DEBUG && FlipperUtils.shouldEnableFlipper(this)) {
             val client = AndroidFlipperClient.getInstance(this)

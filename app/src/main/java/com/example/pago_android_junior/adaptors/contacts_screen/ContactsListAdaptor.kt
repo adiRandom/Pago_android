@@ -14,6 +14,8 @@ class ContactsListAdaptor(_contacts: List<User>) :
 
     var contacts = _contacts.toMutableList();
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
+
+        // Inflate the view for a contact
         val inflater = LayoutInflater.from(parent.context)
         val binding = ContactViewHolderBinding.inflate(inflater, parent, false);
 
@@ -30,6 +32,9 @@ class ContactsListAdaptor(_contacts: List<User>) :
         return contacts.size;
     }
 
+    /**
+     * Update the data displayed by this RecyclerView
+     */
     fun updateData(data: List<User>) {
         contacts = data.toMutableList()
         notifyDataSetChanged()

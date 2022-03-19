@@ -13,6 +13,7 @@ import com.example.pago_android_junior.view_holders.contacts_screen.ContactViewH
 class PostListAdaptor(private var posts: List<Post>) :
     RecyclerView.Adapter<PostViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
+        // Inflate the View for a post
         val inflater = LayoutInflater.from(parent.context)
         val binding = PostViewHolderBinding.inflate(inflater, parent, false);
         return PostViewHolder(binding);
@@ -26,8 +27,12 @@ class PostListAdaptor(private var posts: List<Post>) :
         return posts.size;
     }
 
+    /**
+     * Update the data displayed by this RecyclerView
+     */
     fun updateData(data: List<Post>) {
         posts = data;
+        // Trigger a full redraw
         notifyDataSetChanged()
     }
 

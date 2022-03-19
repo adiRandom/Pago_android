@@ -1,12 +1,8 @@
 package com.example.pago_android_junior.models
 
-import android.content.Context
 import android.graphics.Bitmap
 import android.os.Parcel
 import android.os.Parcelable
-import android.util.Log
-import androidx.core.content.res.ResourcesCompat
-import com.example.pago_android_junior.R
 import com.example.pago_android_junior.models.api.UserApi
 import com.squareup.picasso.Picasso
 import kotlinx.android.parcel.Parcelize
@@ -32,6 +28,7 @@ class User(
         name.split(" ").map { it.first().toString().uppercase() }.reduce { acc, s -> acc + s }
             .subSequence(0, 2)
 
+    // Implement Parcelable to send this object as NavArg
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString() ?: "",
@@ -77,6 +74,8 @@ class User(
         }
     }
 
+    // Implement Parcelable to send this object as NavArg
+
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(id);
         parcel.writeString(name)
@@ -90,6 +89,8 @@ class User(
         return 0
     }
 
+
+    // Override equals to properly compare 2 Users field by field
     override fun equals(other: Any?): Boolean {
         if (other is User) {
             return other.id == id &&
@@ -102,6 +103,7 @@ class User(
         return super<UserApi>.equals(other)
     }
 
+    // Implement Parcelable to send this object as NavArg
     companion object CREATOR : Parcelable.Creator<User> {
         override fun createFromParcel(parcel: Parcel): User {
             return User(parcel)
