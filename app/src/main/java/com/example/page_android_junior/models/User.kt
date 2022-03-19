@@ -7,7 +7,6 @@ import android.os.Parcelable
 import androidx.core.content.res.ResourcesCompat
 import com.example.page_android_junior.R
 import com.example.page_android_junior.models.api.UserApi
-import com.example.page_android_junior.utils.image.generateAvatarForUser
 import com.squareup.picasso.Picasso
 import kotlinx.android.parcel.Parcelize
 
@@ -20,9 +19,13 @@ class User(
     email: String,
     gender: String,
     status: String,
+) : UserApi(id, name, email, gender, status), Parcelable {
+    var avatar: Bitmap? = null
 
-    ) : UserApi(id, name, email, gender, status), Parcelable {
-    lateinit var avatar: Bitmap
+    // Get a string with the initials of the user to use for the avatar if the id is odd
+    // Only keep two initials if the user has more than 2 names
+    val nameInitials =
+        name.split(" ").map { it.first().toString().uppercase() }.reduce { acc, s -> acc + s }.subSequence(0,2)
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
@@ -46,26 +49,10 @@ class User(
         userApi.status,
     );
 
-    fun initAvatar(context: Context?) {
+    init {
 
-        if (this::avatar.isInitialized) {
-            // The avatar was already init
-            return;
-        }
-
-        // Init the avatar
-        if (id % 2 == 0) {
-            if (context == null) {
-                return;
-            }
-            // Generate a image with the initials of the user
-//            TODO: Fix image pos
-            avatar = generateAvatarForUser(
-                this,
-                // Get the font using the context of this view
-                ResourcesCompat.getFont(context, R.font.sf_pro_text_bold)
-            )
-        } else {
+        // Load an avatar if needed
+        if (id % 2 == 1) {
             // GET an image from the web
 //            TODO: Handle error
             val image = Picasso.get().load(IMAGE_URL).get();

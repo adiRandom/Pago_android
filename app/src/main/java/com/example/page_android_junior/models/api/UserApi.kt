@@ -6,7 +6,6 @@ import android.os.Parcelable
 import androidx.core.content.res.ResourcesCompat
 import com.example.page_android_junior.R
 import com.example.page_android_junior.services.api.ApiInstance
-import com.example.page_android_junior.utils.image.generateAvatarForUser
 import com.squareup.picasso.Picasso
 import kotlinx.parcelize.Parcelize
 

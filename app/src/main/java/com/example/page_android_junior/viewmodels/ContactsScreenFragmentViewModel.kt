@@ -27,7 +27,7 @@ class ContactsScreenFragmentViewModel : ViewModel() {
                 val body = res.body();
 //            TODO: Handle errors in UI
                 if (body != null) {
-                    val users = body.map { User(it).apply { initAvatar(context) } }
+                    val users = body.map { User(it) }
                     contacts.postValue(users);
                 }
             } catch (e: Exception) {

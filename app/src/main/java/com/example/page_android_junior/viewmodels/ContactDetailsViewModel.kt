@@ -1,5 +1,6 @@
 package com.example.page_android_junior.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.page_android_junior.models.Post
 import com.example.page_android_junior.models.api.ApiPost
