@@ -8,9 +8,18 @@
 
         <import type="com.example.page_android_junior.models.User" />
 
+        <import type="android.view.View" />
+
+        <import type="androidx.lifecycle.LiveData" />
+
         <variable
             name="user"
             type="com.example.page_android_junior.models.User" />
+
+        <variable
+            name="postCount"
+            type="LiveData&lt;Integer>" />
+
 
     </data>
 
@@ -53,10 +62,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/contact_details_user_details_layout"
             android:layout_width="match_parent"
-            android:layout_height="162dp"
+            android:layout_height="wrap_content"
             android:padding="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/contact_details_topbar_layout">
@@ -83,6 +93,7 @@
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textAlignment="center"
                 app:layout_constraintTop_toBottomOf="@id/contact_details_avatar" />
 
             <TextView
@@ -94,6 +105,7 @@
                 android:text="@{user.email}"
                 android:textColor="@color/secondary"
                 android:textSize="17sp"
+                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/contact_details_user_name" />
@@ -103,6 +115,7 @@
             android:id="@+id/contat_details_post_empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="@{postCount == 0 ? View.VISIBLE : View.INVISIBLE}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/contact_details_user_details_layout">
 
@@ -123,10 +136,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/contact_details_post_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
 
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-
             app:layout_constraintTop_toBottomOf="@+id/contact_details_user_details_layout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

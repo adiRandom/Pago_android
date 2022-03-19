@@ -1,5 +1,6 @@
 package com.example.page_android_junior.adaptors.contacts_screen
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -8,9 +9,10 @@ import com.example.page_android_junior.databinding.ContactViewHolderBinding
 import com.example.page_android_junior.models.User
 import com.example.page_android_junior.view_holders.contacts_screen.ContactViewHolder
 
-class ContactsListAdaptor(private var contacts: List<User>) :
+class ContactsListAdaptor(_contacts: List<User>) :
     RecyclerView.Adapter<ContactViewHolder>() {
 
+    var contacts = _contacts.toMutableList();
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ContactViewHolderBinding.inflate(inflater, parent, false);
@@ -29,8 +31,18 @@ class ContactsListAdaptor(private var contacts: List<User>) :
     }
 
     fun updateData(data: List<User>) {
-        contacts = data;
+        contacts = data.toMutableList()
         notifyDataSetChanged()
+    }
+
+    /**
+     * Update the element at a given index
+     * More efficient than updating the whole list, since this way we can tell teh RecyclerView to only redraw parts of the UI
+     */
+    fun updateItem(item: User, index: Int) {
+        Log.d("Changed", index.toString())
+        contacts[index] = item;
+        notifyItemChanged(index)
     }
 
 }

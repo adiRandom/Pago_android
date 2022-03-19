@@ -12,29 +12,36 @@ import kotlinx.coroutines.withContext
 import java.lang.Exception
 
 class ContactsScreenFragmentViewModel : ViewModel() {
-    private val contacts: MutableLiveData<List<User>> by lazy {
-        MutableLiveData<List<User>>(emptyList())
-    }
-
-    fun getContacts(): LiveData<List<User>> = contacts;
-
-
-    //TODO: Investigate load time
-    fun loadContacts(context: Context?) {
-        viewModelScope.launch(Dispatchers.IO) {
+    val contacts: LiveData<List<User>> = liveData {
+        emit(emptyList())
+        withContext(Dispatchers.IO) {
             try {
                 val res = ApiInstance.UserApi.getUserInfoList().execute()
                 val body = res.body();
-//            TODO: Handle errors in UI
                 if (body != null) {
-                    val users = body.map { User(it) }
-                    contacts.postValue(users);
+                    val users = body.map { User(it) };
+
+                    // Emit the users without the avatars for a fast initial load
+                    emit(users)
+
+                    // Now load the avatars of all the users that need
+                    // After an avatar gets loaded emit the new value so we don't wait until all of them are loaded to draw the final UI
+                    for (user in users) {
+                        user.loadAvatar()
+                        if (user.avatar != null) {
+                            // An avatar was loaded so emit the new value for liveData
+                            emit(users)
+                        }
+                    }
+
+
                 }
             } catch (e: Exception) {
                 Log.e("Error", e.toString())
             }
         }
     }
+    val contactCount: LiveData<Int> = Transformations.map(contacts) { it.size }
 
 
 }

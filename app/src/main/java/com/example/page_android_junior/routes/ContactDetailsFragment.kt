@@ -1,6 +1,7 @@
 package com.example.page_android_junior.routes
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -39,14 +40,18 @@ class ContactDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+
         binding = ContactDetailsFragmentBinding.inflate(inflater, container, false)
         // Init the data binding
         binding.user = args.user
+        binding.postCount = viewModel.postCount;
+
+        // Tell the binding who owns the lifecycle of any LiveData sent through data binding
+        binding.lifecycleOwner = viewLifecycleOwner
 
         // Init the RecyclerView for the posts
         val postListLayoutManager = LinearLayoutManager(activity)
-        // Init with an empty list and wait for the posts to load in the background
-        postListAdaptor = PostListAdaptor(emptyList())
+        postListAdaptor = PostListAdaptor(viewModel.getPosts().value ?: emptyList())
         binding.contactDetailsPostList.also {
             it.adapter = postListAdaptor
             it.layoutManager = postListLayoutManager
@@ -55,7 +60,7 @@ class ContactDetailsFragment : Fragment() {
         // Bind the back button to the back navigation
         binding.backButton.setOnClickListener {
             val action = ContactDetailsFragmentDirections.goBack()
-            findNavController().navigate(action)
+            findNavController().navigateUp()
         }
         return binding.root
 

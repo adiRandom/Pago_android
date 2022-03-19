@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#C1C8D7"
-            android:visibility="@{user.id % 2 == 0? View.VISIBLE:View.INVISIBLE}">
+            android:visibility="@{user.id % 2 == 0 || user.avatar == null ? View.VISIBLE:View.INVISIBLE}">
 
             <TextView
                 android:layout_width="wrap_content"

@@ -13,6 +13,9 @@ class ContactDetailsViewModel : ViewModel() {
     private val posts: MutableLiveData<List<Post>> by lazy {
         MutableLiveData<List<Post>>(emptyList())
     }
+    val postCount: LiveData<Int> = Transformations.map(posts) {
+        it.size ?: 0
+    }
 
     fun getPosts(): LiveData<List<Post>> = posts;
 

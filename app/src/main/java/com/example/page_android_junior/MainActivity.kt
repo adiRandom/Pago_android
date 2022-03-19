@@ -2,6 +2,7 @@ package com.example.page_android_junior
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.page_android_junior.databinding.ActivityMainBinding
 
@@ -24,9 +25,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-//    override fun onSupportNavigateUp(): Boolean {
-//        val navController = findNavController(R.id.nav_host_fragment_content_main)
-//        return navController.navigateUp(appBarConfiguration)
-//                || super.onSupportNavigateUp()
-//    }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        return navController.navigateUp()
+                || super.onSupportNavigateUp()
+    }
 }
